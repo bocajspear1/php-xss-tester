@@ -1,4 +1,4 @@
 <?php
-
-$input1 = $input;
+// No Sanitation!
+$input_run = $input;
 ?>

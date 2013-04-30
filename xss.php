@@ -1,12 +1,12 @@
 <?php
 $input = '';
-$input1 = '';
-$input2 = '';
+$input_run = '';
 $qgval = '';
 $qpval = '';
 $igval = '';
 $ipval = '';
 $message='';
+
 if (array_key_exists('q',$_GET))
 	{
 		$input = $_GET['q'];
@@ -35,7 +35,7 @@ if ($input == "")
 				// Setup for textboxes
 				$igval = $_GET['i'];
 				$message = "Using mitigation #$i<br>";
-				include_once("mit" . $i . ".sec.php");
+				include_once("mitigate." . $i . ".php");
 				
 			}else if (array_key_exists('i',$_POST)) {
 				$i = $_POST['i'];
@@ -50,10 +50,10 @@ if ($input == "")
 				$ipval = $i;
 				
 				$message = "Using mitigation #$i<br>";
-				include_once("mit" . $i . ".sec.php");
+				include_once("mitigate." . $i . ".php");
 			}else{
 				$message = "Using no mitigation<br>";
-				include_once("mit0.sec.php");
+				include_once("mitigate.0.php");
 			}
 	}
 
@@ -94,17 +94,17 @@ if ($input == "")
 	</div>
 	<div style="border:1px solid grey;margin:15px;padding:20px;">
 	<h3>Data Test:</h3>	
-	--&gt;<?php echo $input1;?>&lt;--
+	--&gt;<?php echo $input_run;?>&lt;--
 	</div>
 	
 	<div style="border:1px solid grey;margin:15px;padding:20px;">
 		<h3>Link Test:</h3>
-	<a href="<?php echo $input1 ?>">Link</a>
+	<a href="<?php echo $input_run ?>">Link</a>
 	</div>
 	
 	<div style="border:1px solid grey;margin:15px;padding:20px;">
 		<h3>Attribute Test: (id)</h3>
-	<div id="<?php echo $input1 ?>">Inside Div</div>
+	<div id="<?php echo $input_run ?>">Inside Div</div>
 	</div>
 
 	
